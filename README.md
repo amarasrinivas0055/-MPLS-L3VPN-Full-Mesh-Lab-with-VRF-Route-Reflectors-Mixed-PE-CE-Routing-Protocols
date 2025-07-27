@@ -51,7 +51,7 @@ While the original lab used static PE-CE routing, I extended it by introducing *
   - Customer C → EIGRP
   - Customer D → OSPF
 
-![Topology]<img width="1872" height="856" alt="Image" src="https://github.com/user-attachments/assets/c89d2f10-7c93-42b3-adc3-a60bdf624fdb" />
+<img width="1872" height="856" alt="Image" src="https://github.com/user-attachments/assets/c89d2f10-7c93-42b3-adc3-a60bdf624fdb" />
 
 ---
 
@@ -87,17 +87,6 @@ While the original lab used static PE-CE routing, I extended it by introducing *
 
 ---
 
-## 📂 Repository Contents
-
-| File/Folder | Description |
-|-------------|-------------|
-| `MPLS L3VPN with iBGP Mesh Configuration and Static Routing Between PE - CE Router.txt` | Complete device configuration for PEs, CEs, RRs |
-| `MPLS-L3-VPN-IBGP-MESH-TOPOLOGY.PNG` | Lab topology diagram |
-| `iBGP Mesh Configuration and Static Routing Between PE - CE Router.unl` | EVE-NG project file (import into EVE) |
-
-
----
-
 ## 🧪 How to Use This Lab
 
 1. Import the `.unl` file into your EVE-NG setup.
@@ -116,13 +105,7 @@ While the original lab used static PE-CE routing, I extended it by introducing *
 
 ---
 
-## 📸 Screenshots (to add in your repo)
-
-- MP-BGP Neighborships via Route Reflectors  
-- MPLS Label Forwarding Tables  
-- VRF Route Tables on PE Routers  
-- End-to-End Pings between CE Routers  
-- Inter-VRF Route Learning via Extended Communities
+## 📸 Screenshots :-
 
 
 End To End Reachability :-
@@ -132,7 +115,6 @@ End To End Reachability :-
 
 
 <img width="1117" height="485" alt="Image" src="https://github.com/user-attachments/assets/c7e65654-0667-4dca-80a3-77deb34e95fd" />
-
 
 
 Customer A output screenshots :-
@@ -258,6 +240,104 @@ Customer-B-site-2-RIP-routes :
 
 
 
+Customer C output screenshots : -
+======================
+
+Customer-C-connected-PE6-forwarding table :-
+----------------------------------------------------
+
+<img width="904" height="561" alt="Image" src="https://github.com/user-attachments/assets/e207f466-71fb-49dc-b356-8ed381c67559" />
+
+
+Customer-C-MP-BGP-routes :
+--------------------------------
+
+<img width="1201" height="842" alt="Image" src="https://github.com/user-attachments/assets/9d4a3ec8-4727-4012-87f8-979f48da360a" />
+
+
+Customer-C-MP-BGP-Neighborship table :
+-----------------------------------------------
+
+<img width="1077" height="341" alt="Image" src="https://github.com/user-attachments/assets/0218419a-7593-4c7e-81a6-33bd4d2eef4a" />
+
+
+Customer-C-site-1-EIGRP-routes :
+-------------------------------------
+
+<img width="1010" height="644" alt="Image" src="https://github.com/user-attachments/assets/f46f07d5-e7da-4f45-b346-0466cd84295d" />
+
+
+Customer-C-site-2-EIGRP-routes :-
+------------------------------------
+
+<img width="983" height="640" alt="Image" src="https://github.com/user-attachments/assets/8790f8eb-132c-4979-be50-93d617c6735d" />
+
+Customer D output screenshots : -
+======================
+
+Customer-D-connected-PE5-forwarding table :
+----------------------------------------------------
+
+<img width="938" height="554" alt="Image" src="https://github.com/user-attachments/assets/96c59a16-607a-4dd7-8d77-e101adcc7b4d" />
+
+
+Customer-D-MP-BGP-routes :
+---------------------------------
+
+<img width="934" height="855" alt="Image" src="https://github.com/user-attachments/assets/0988151d-f3cd-4aaa-8f1c-bc5db654a519" />
+
+
+Customer-D-MP-BGP-Neighborship table :
+-----------------------------------------------
+
+<img width="1040" height="347" alt="Image" src="https://github.com/user-attachments/assets/3c2cab12-4064-4211-96ec-c9fc993ad43f" />
+
+
+Customer-D-site-1-OSPF-routes :
+-------------------------------------
+
+<img width="982" height="644" alt="Image" src="https://github.com/user-attachments/assets/750a2201-9752-4bb2-a2b9-7b2475a55abc" />
+
+
+Customer-D-site-2-OSPF-routes : 
+------------------------------------
+
+<img width="1087" height="660" alt="Image" src="https://github.com/user-attachments/assets/66f7c5f9-f569-4913-bfce-db95320a0512" />
+
+
+Route Reflector Output Screenshot  : -
+========================
+
+
+Route-reflector-1-MP-BGP-neighborship :
+-----------------------------------------------
+
+<img width="1059" height="407" alt="Image" src="https://github.com/user-attachments/assets/6ec4e16c-e9f7-4a5d-bbd4-fe1b4e4b0e27" />
+
+
+Route-reflector-1-MP-BGP-routes :
+--------------------------------------
+
+<img width="1074" height="566" alt="Image" src="https://github.com/user-attachments/assets/f2c1d665-bc35-40b6-a5c0-8a061bbb3881" />
+
+
+Route-reflector-2-MP-BGP-neighborship : 
+----------------------------------------------
+
+<img width="840" height="420" alt="Image" src="https://github.com/user-attachments/assets/921cb526-45cf-4fb0-abef-d7d6dc56934e" />
+
+
+Route-reflector-2-MP-BGP-routes : 
+---------------------------------------
+
+<img width="976" height="590" alt="Image" src="https://github.com/user-attachments/assets/a3506597-5496-42fb-8138-6fe8eb0d20fa" />
+
+
+Provider-router-forwarding-table :
+=======================
+
+<img width="789" height="295" alt="Image" src="https://github.com/user-attachments/assets/56d81a5a-bf26-4c32-a566-697ec795a5be" />
+
 
 ---
 
@@ -282,6 +362,6 @@ This lab deepened my understanding of:
 
 ## 📬 Contact
 
-Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/your-linkedin) if you'd like to discuss, collaborate, or provide feedback on this lab.
+Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/amara-srinivas-53271a253/) if you'd like to discuss, collaborate, or provide feedback on this lab.
 
 ---
