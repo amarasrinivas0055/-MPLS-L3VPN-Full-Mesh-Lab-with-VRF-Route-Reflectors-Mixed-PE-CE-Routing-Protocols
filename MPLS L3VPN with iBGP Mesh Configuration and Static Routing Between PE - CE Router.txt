@@ -1,0 +1,1780 @@
+Assigning ips :-
+================
+
+R1:
+----
+
+en
+
+config t
+
+hostname Route-reflector-client 
+
+int e0/0
+
+ip add 12.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e0/1
+
+ip add 13.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e0/2
+
+ip add 18.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e0/3
+
+ip add 19.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e1/0
+
+ip add 14.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e1/1
+
+ip add 15.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e1/2
+
+ip add 16.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int e1/3
+
+ip add 17.1.1.1 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+
+int lo1
+
+ip add 1.1.1.1 255.255.255.255 
+
+exit
+
+===========================================================================
+
+R2 :
+----
+
+en
+
+config t
+
+hostname PE1
+
+int fa0/0
+
+ip add 12.1.1.2 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+int lo1
+
+ip add 2.2.2.2 255.255.255.255 
+
+exit
+
+
+int fa0/1
+
+ip add 21.1.1.2 255.255.255.0
+
+no shut 
+
+----------------------------------------------------------------------------
+
+R3 :
+----
+
+en
+
+config t
+
+hostname PE2
+
+
+int fa0/0
+
+ip add 13.1.1.3 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+int lo1
+
+ip add 3.3.3.3 255.255.255.255 
+
+exit
+
+
+int fa0/1
+
+ip add 31.1.1.3 255.255.255.0
+
+no shut 
+
+-----------------------------------------------------------------
+
+R4 :
+----
+
+en
+
+config t
+
+hostname PE3
+
+int fa0/0
+
+ip add 14.1.1.4 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+int lo1
+
+ip add 4.4.4.4 255.255.255.255 
+
+exit
+
+
+
+int fa0/1
+
+ip add 41.1.1.4 255.255.255.0
+
+no shut 
+
+
+-----------------------------------------------------------------
+
+R5 :
+----
+
+en
+
+config t
+
+hostname PE4
+
+int fa0/0
+
+ip add 15.1.1.5 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+int lo1
+
+ip add 5.5.5.5 255.255.255.255 
+
+exit
+
+
+
+int fa0/1
+
+ip add 51.1.1.5 255.255.255.0
+
+no shut 
+
+exit
+
+-------------------------------------------------------------------
+
+R6 :
+----
+
+en
+
+config t
+
+hostname PE5
+
+int e0/0
+
+ip add 16.1.1.6 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+
+int lo1
+
+ip add 6.6.6.6 255.255.255.255 
+
+exit
+
+
+int e0/1
+
+no ip add 60.1.1.6 255.255.255.0
+
+ip add 64.1.1.6 255.255.255.0
+
+no shut 
+
+exit
+
+
+int e0/2
+
+no ip add 61.1.1.6 255.255.255.0
+
+ip add 65.1.1.6 255.255.255.0
+
+no shut 
+
+exit
+
+-------------------------------------------------------------------
+
+R7 :
+----
+
+en
+
+config t
+
+hostname PE6
+
+int e0/0
+
+ip add 17.1.1.7 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+int lo1
+
+ip add 7.7.7.7 255.255.255.255 
+
+exit
+
+
+int e0/1
+
+no ip add 72.1.1.7 255.255.255.0
+
+ip add 76.1.1.7 255.255.255.0
+
+no shut 
+
+exit
+
+
+int e0/2
+
+no ip add 73.1.1.7 255.255.255.0
+
+ip add 77.1.1.7 255.255.255.0
+
+no shut 
+
+exit
+
+
+ 
+------------------------------------------------------------------
+
+
+R8 :
+----
+
+en
+
+config t
+
+hostname RR1
+
+int fa0/0
+
+ip add 18.1.1.8 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+
+int lo1
+
+ip add 8.8.8.8 255.255.255.255 
+
+exit
+
+----------------------------------------------------------------
+
+R9 :
+----
+
+en
+
+config t
+
+hostname RR2
+
+int fa0/0
+
+ip add 19.1.1.9 255.255.255.0
+
+ip ospf network point-to-point
+
+no shut 
+
+exit
+
+int lo1
+
+ip add 9.9.9.9 255.255.255.255 
+
+exit
+
+-----------------------------------------------------------
+
+R10
+---
+
+en
+
+config t
+
+hostname CE-A-Site-1
+
+int fa0/0
+
+ip add 21.1.1.10 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.1.10 255.255.255.0
+
+no shut 
+
+-----------------------------------------------------------------
+
+R11
+---
+
+en
+
+config t
+
+hostname CE-A-Site-2
+
+int fa0/0
+
+ip add 31.1.1.11 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.2.10 255.255.255.0
+
+no shut 
+
+exit
+
+-----------------------------------------------
+
+R12
+---
+
+en
+
+config t
+
+hostname CE-B-Site-1
+
+int fa0/0
+
+ip add 41.1.1.12 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.3.10 255.255.255.0
+
+no shut 
+
+exit
+
+----------------------------------------------------------
+
+R13
+---
+
+en
+
+config t
+
+hostname CE-B-Site-2
+
+int fa0/0
+
+ip add 51.1.1.13 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.4.10 255.255.255.0
+
+no shut 
+
+exit
+
+--------------------------------------------------------------
+
+R14
+---
+
+en
+
+config t
+
+hostname CE-C-Site-1
+
+int fa0/0
+
+ip add 64.1.1.14 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.5.10 255.255.255.0
+
+no shut 
+
+exit
+
+-----------------------------------------------------------
+
+R15
+---
+
+en
+
+config t
+
+hostname CE-C-Site-2
+
+int fa0/0
+
+ip add 65.1.1.15 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.6.10 255.255.255.0
+
+no shut 
+
+exit
+
+------------------------------------------------------------------
+
+R16
+---
+
+en
+
+config t
+
+hostname CE-D-Site-1
+
+int fa0/0
+
+ip add 76.1.1.16 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.7.10 255.255.255.0
+
+no shut 
+
+exit
+
+--------------------------------------------------------------
+
+R17
+---
+
+en
+
+config t
+
+hostname CE-D-Site-2
+
+int fa0/0
+
+ip add 77.1.1.17 255.255.255.0
+
+no shut 
+
+
+int fa0/1
+
+ip add 192.168.8.10 255.255.255.0
+
+no shut 
+
+exit
+
+======================================================================================================================
+
+OSPF CONFIGURATION :
+=====================
+
+R1 :-
+======
+
+Router ospf 10 
+
+router-id 1.1.1.1 
+
+network 12.1.1.0 0.0.0.255 area 0 
+
+network 13.1.1.0 0.0.0.255 area 0 
+
+network 14.1.1.0 0.0.0.255 area 0 
+
+network 15.1.1.0 0.0.0.255 area 0 
+
+network 16.1.1.0 0.0.0.255 area 0 
+
+network 17.1.1.0 0.0.0.255 area 0 
+
+network 18.1.1.0 0.0.0.255 area 0 
+
+network 19.1.1.0 0.0.0.255 area 0 
+
+network 1.1.1.1 255.255.255.255 area 0 
+
+exit
+
+------------------------------------------------------------------------------------------------------------------
+
+R2 :-
+=====
+
+Router ospf 10 
+
+router-id 2.2.2.2
+
+network 12.1.1.0 0.0.0.255 area 0 
+
+network 2.2.2.2 255.255.255.255 area 0
+
+exit
+
+--------------------------------------------------------------------------------------------------------------
+
+R3 :-
+======
+
+Router ospf 10 
+
+router-id 3.3.3.3 
+
+network 13.1.1.0 0.0.0.255 area 0 
+
+network 3.3.3.3 255.255.255.255 area 0
+
+exit
+
+
+------------------------------------------------------------------------------------------------------------------
+
+R4 :-
+=====
+
+Router ospf 10 
+
+router-id 4.4.4.4
+
+network 14.1.1.0 0.0.0.255 area 0 
+
+network 4.4.4.4 255.255.255.255 area 0
+
+exit
+
+----------------------------------------------------------------------------------------------------------------
+
+
+R5 :-
+=====
+
+Router ospf 10 
+
+router-id 5.5.5.5
+
+network 15.1.1.0 0.0.0.255 area 0 
+
+network 5.5.5.5 255.255.255.255 area 0
+
+exit
+
+--------------------------------------------------------------------------------------------------------
+
+
+R6 :-
+=====
+
+Router ospf 10 
+
+router-id 6.6.6.6 
+
+network 16.1.1.0 0.0.0.255 area 0 
+
+network 6.6.6.6 255.255.255.255 area 0
+
+exit
+
+-------------------------------------------------
+
+R7
+--
+
+Router ospf 10 
+
+router-id 7.7.7.7
+
+network 17.1.1.0 0.0.0.255 area 0 
+
+network 7.7.7.7 255.255.255.255 area 0
+
+exit
+
+-------------------------------------------------
+
+R8
+--
+
+Router ospf 10 
+
+router-id 8.8.8.8
+
+network 18.1.1.0 0.0.0.255 area 0 
+
+network 8.8.8.8 255.255.255.255 area 0
+
+exit
+
+R9
+--
+
+-------------------------------------------------
+
+R9
+--
+
+Router ospf 10 
+
+router-id 9.9.9.9
+
+network 19.1.1.0 0.0.0.255 area 0 
+
+network 9.9.9.9 255.255.255.255 area 0
+
+exit
+
+-------------------------------------------------------------------
+
+Mpls
+----
+
+r1
+--
+
+mpls label range 17 99 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+
+--------------------------------------------------
+
+r2
+--
+
+mpls label range 100 199 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+
+
+--------------------------------------------------------
+
+r3
+--
+
+mpls label range 300 399 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+ 
+
+--------------------------------------------------------
+
+r4
+--
+
+mpls label range 400 499 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+
+--------------------------------------------------------
+
+r5
+--
+
+mpls label range 500 599 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+
+--------------------------------------------------------
+
+r6
+--
+
+mpls label range 600 699 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+    
+-------------------------------------------------------
+r7
+--
+
+mpls label range 700 799 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+
+-------------------------------------------------------
+r8
+--
+
+mpls label range 800 899 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+    
+------------------------------------------------------------
+
+r9
+--
+
+mpls label range 900 999 
+
+
+router ospf 10 
+
+mpls ldp autoconfig area 0 
+
+exit
+    
+====================================================================
+
+BGP configuration 
+==================
+
+R2
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+---------------------------
+
+R3
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+exit
+
+-----------------------------------------------------------
+R4
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+exit
+
+--------------------------------
+
+R5
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+exit
+
+--------------------------------
+
+R6
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+exit
+
+--------------------------------
+
+R7
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RR peer-group 
+
+neighbor RR remote-as 100 
+
+neighbor RR update-source loopback 1 
+
+neighbor 8.8.8.8 peer-group RR
+
+neighbor 9.9.9.9 peer-group RR
+
+address-family vpnv4 
+
+neighbor 8.8.8.8 activate 
+
+neighbor 9.9.9.9 activate 
+
+exit
+
+-----------------------------------------------
+
+R8 
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RRC peer-group 
+
+neighbor RRC remote-as 100 
+
+neighbor RRC update-source loopback 1 
+
+neighbor 2.2.2.2 peer-group RRC
+
+neighbor 3.3.3.3 peer-group RRC
+
+neighbor 4.4.4.4 peer-group RRC
+
+neighbor 5.5.5.5 peer-group RRC
+
+neighbor 6.6.6.6 peer-group RRC
+
+neighbor 7.7.7.7 peer-group RRC
+
+address-family vpnv4 
+
+neighbor 2.2.2.2 activate 
+
+neighbor 3.3.3.3 activate 
+
+neighbor 4.4.4.4 activate 
+
+neighbor 5.5.5.5 activate 
+
+neighbor 6.6.6.6 activate 
+
+neighbor 7.7.7.7 activate 
+
+neighbor RRC route-reflector-client 
+
+-----------------------------------------
+
+R9
+--
+
+router bgp 100 
+
+no bgp default ipv4-unicast 
+
+neighbor RRC peer-group 
+
+neighbor RRC remote-as 100 
+
+neighbor RRC update-source loopback 1 
+
+neighbor 2.2.2.2 peer-group RRC
+
+neighbor 3.3.3.3 peer-group RRC
+
+neighbor 4.4.4.4 peer-group RRC
+
+neighbor 5.5.5.5 peer-group RRC
+
+neighbor 6.6.6.6 peer-group RRC
+
+neighbor 7.7.7.7 peer-group RRC
+
+address-family vpnv4 
+
+neighbor 2.2.2.2 activate 
+
+neighbor 3.3.3.3 activate 
+
+neighbor 4.4.4.4 activate 
+
+neighbor 5.5.5.5 activate 
+
+neighbor 6.6.6.6 activate 
+
+neighbor 7.7.7.7 activate 
+
+neighbor RRC route-reflector-client 
+
+------------------------------------------------------
+
+VRF 
+---
+
+R2
+--
+
+ip vrf customer-A1
+
+rd 1:1
+
+route-target both 100:100
+
+int fa0/1
+
+ip vrf forwarding customer-A1
+
+ip add 21.1.1.2 255.255.255.0 
+
+no shut
+
+exit
+--------------------------------------------------------
+
+R3
+---
+
+ip vrf customer-A2
+
+rd 1:1
+
+route-target both 100:100
+
+int fa0/1
+
+ip vrf forwarding customer-A2
+
+ip add 31.1.1.3 255.255.255.0 
+
+no shut
+
+exit
+
+-------------------
+
+R4
+---
+
+ip vrf customer-B1
+
+rd 2:2
+
+route-target both 200:200
+
+int fa0/1
+
+ip vrf forwarding customer-B1
+
+ip add 41.1.1.4 255.255.255.0 
+
+no shut
+
+exit
+
+-------------------
+
+R5
+---
+
+ip vrf customer-B2
+
+rd 2:2
+
+route-target both 200:200
+
+int fa0/1
+
+ip vrf forwarding customer-B1
+
+ip add 51.1.1.5 255.255.255.0 
+
+no shut
+
+exit
+
+-------------------------------------
+
+R6
+---
+
+ip vrf customer-C1
+
+rd 3:3
+
+route-target both 300:300
+
+exit
+
+
+ip vrf customer-C2
+
+rd 6:6
+
+route-target both 300:300
+
+exit
+
+
+int e0/1
+
+ip vrf forwarding customer-C1
+
+ip add 64.1.1.6 255.255.255.0 
+
+exit
+
+
+int e0/2
+
+ip vrf forwarding customer-C2
+
+ip add 65.1.1.6 255.255.255.0 
+
+exit
+
+-----------------------------------------------------------
+
+R7
+---
+
+ip vrf customer-D1
+
+rd 4:4
+
+route-target both 400:400
+
+exit
+
+
+ip vrf customer-D2
+
+rd 8:8
+
+route-target both 400:400
+
+exit
+
+
+int e0/1
+
+ip vrf forwarding customer-D1
+
+ip add 76.1.1.7 255.255.255.0 
+
+exit
+
+
+int e0/2
+
+ip vrf forwarding customer-D2
+
+ip add 77.1.1.7 255.255.255.0 
+
+exit
+
+
+-------------------------------------------------------
+
+Static routing 
+-----------------
+
+R10
+--
+
+ip route 0.0.0.0 0.0.0.0 21.1.1.2 
+
+--------------------------------------------------------------------------
+
+R2
+--
+
+ip route vrf customer-A1 192.168.1.0 255.255.255.0 21.1.1.10
+
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-A1
+
+redistribute static
+
+exit
+
+---------------------------------------------------------------------------------
+
+R11
+--
+
+ip route 0.0.0.0 0.0.0.0 31.1.1.3
+
+--------------------------------------------------------------
+
+R3
+--
+
+ip route vrf customer-A2 192.168.2.0 255.255.255.0 31.1.1.11
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-A2
+
+redistribute static
+
+exit
+
+
+----------------------------------------------------------------
+
+RIP :
+--------
+
+R12
+--
+
+router rip 
+
+version 2
+
+no auto-summary
+
+network 192.168.3.0
+
+network 41.1.1.0 
+
+exit
+
+
+R4
+--
+
+router rip 
+
+address-family ipv4 vrf customer-B1 
+
+version 2
+
+no auto-summary
+
+network 41.1.1.0 
+
+exit
+
+
+
+router bgp 100 
+
+address-family ipv4 unicast vrf customer-B1 
+
+redistribute rip 
+
+
+router rip 
+
+address-family ipv4 unicast vrf customer-B1 
+
+redistribute bgp 100 metric 1
+
+exit
+
+----------------------------------------------
+
+R13
+---
+
+router rip 
+
+version 2
+
+no auto-summary 
+
+network 192.168.4.0
+
+network 51.1.1.0 
+
+exit
+
+-------------------------------------------------
+
+R5
+--
+
+router rip 
+
+address-family ipv4 vrf customer-B2 
+
+version 2 
+
+no auto-summary 
+
+network 51.1.1.0 
+
+exit
+
+
+router bgp 100 
+
+address-family ipv4 unicast vrf customer-B2
+
+redistribute rip 
+
+exit
+
+
+router rip 
+
+address-family ipv4 unicast vrf customer-B2
+
+redistribute bgp 100 metric 1
+
+exit
+
+--------------------------------------------------------------
+EIGRP 
+------
+
+R14
+
+router eigrp 100 
+
+no auto-summary
+
+network 64.1.1.0 0.0.0.255
+
+network 192.168.5.0 0.0.0.255
+
+exit
+
+R6
+---
+
+router eigrp `100
+
+address-family ipv4 unicast vrf Customer-C1 autonomous-system 100
+
+no auto-summary
+
+network 64.1.1.0 0.0.0.255
+
+exit
+
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-C1
+
+redistribute eigrp 100
+
+exit
+
+
+router eigrp 100
+
+address-family ipv4 unicast vrf customer-C1
+
+redistribute bgp 100 metric 1 1 1 1 1
+
+exit
+
+
+
+router eigrp `200
+
+address-family ipv4 unicast vrf Customer-C2 autonomous-system 200
+
+no auto-summary
+
+network 65.1.1.0 0.0.0.255
+
+exit
+
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-C2
+
+redistribute eigrp 200
+
+exit
+
+
+router eigrp 200
+
+address-family ipv4 unicast vrf customer-C1
+
+redistribute bgp 100 metric 1 1 1 1 1
+
+exit
+
+
+
+
+
+R15
+---
+
+router eigrp 200 
+
+no auto-summary
+
+network 65.1.1.0 0.0.0.255
+
+network 192.168.6.0 0.0.0.255
+
+exit
+
+
+
+
+
+
+OSPF 
+----
+
+R16
+
+router ospf 100
+
+ip ospf network point-to-point 
+
+network 76.1.1.0 0.0.0.255 area 0
+
+network 192.168.7.0 0.0.0.255 area 0
+
+exit
+
+
+R16
+---
+
+int fa0/0
+
+ip ospf network point-to-point 
+
+exit
+
+
+router ospf 100 
+
+router-id 16.16.16.16 
+
+network 76.1.1.0 0.0.0.255 area 0
+
+network 192.168.7.0 0.0.0.255 area 0 
+
+exit
+
+R7
+--
+
+int e0/2
+
+ip vrf customer-D1
+
+ip ospf network point-to-point 
+
+exit
+
+
+router ospf 100 vrf customer-D1
+
+network 76.1.1.0 0.0.0.255 area 0
+
+exit
+
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-D1
+
+redistribute ospf 100
+
+exit
+
+
+router ospf 100 vrf customer-D1
+
+redistribute bgp 100 metric 1
+
+exit
+
+
+int e0/1
+
+ip vrf forwarding customer-D2
+
+ip ospf network point-to-point
+
+exit
+
+
+
+router ospf 200 vrf customer-D2
+
+network 77.1.1.0 0.0.0.255 area 0
+
+exit
+
+
+router bgp 100
+
+address-family ipv4 unicast vrf customer-D2
+
+redistribute ospf 200
+
+exit
+
+
+router ospf 200 vrf customer-D1
+
+redistribute bgp 100 metric 1
+
+exit
+
+
+R17
+---
+
+router ospf 200
+
+ip ospf network point-to-point 
+
+network 77.1.1.0 0.0.0.255 area 0
+
+network 192.168.8.0 0.0.0.255 area 0
+
+exit
+
+
+===============================================================
+
+Mesh config
+
+R2
+--
+
+ip vrf customer-A1
+
+route-target import 200:200
+
+route-target import 300:300
+
+route-target import 400:400
+
+exit
+
+R3
+--
+
+ip vrf customer-A2
+
+route-target import 200:200
+
+route-target import 300:300
+
+route-target import 400:400
+
+R4
+--
+
+ip vrf customer-B1
+
+route-target import 100:100
+
+route-target import 300:300
+
+route-target import 400:400
+
+R5 
+--
+
+ip vrf customer-B2
+
+route-target import 100:100
+
+route-target import 300:300
+
+route-target import 400:400
+
+R6
+--
+
+ip vrf customer-C1
+
+route-target import 100:100
+
+route-target import 200:200
+
+route-target import 400:400
+
+exit
+
+ip vrf customer-C2
+
+route-target import 100:100
+
+route-target import 200:200
+
+route-target import 400:400
+
+exit
+
+
+
+R7
+--
+
+ip vrf customer-D1
+
+route-target import 100:100 
+
+route-target import 200:200
+
+route-target import 300:300
+
+
+ip vrf customer-D2
+
+route-target import 100:100 
+
+route-target import 200:200
+
+route-target import 300:300
+
+
+
+
+
+195 199 203
+
+
+
+
+
+
+
